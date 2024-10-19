@@ -1,7 +1,7 @@
 import arcade
 
 SCREEN_WIGHT = 400
-SCREEN_HEIHT = 300
+SCREEN_HEIGHT = 300
 SCREEN_TITLE = "Пин-понг"
 
 
@@ -25,9 +25,9 @@ class Game(arcade.Window):
 
     def setup(self):
         self.bar.center_x = SCREEN_WIGHT / 2
-        self.bar.center_y = SCREEN_HEIHT / 2
+        self.bar.center_y = SCREEN_HEIGHT / 2
         self.ball.center_x = SCREEN_WIGHT / 2
-        self.ball.center_y = SCREEN_WIGHT / 2
+        self.ball.center_y = SCREEN_HEIGHT / 2
 
     def on_draw(self):
         self.clear((255, 255, 255))
@@ -36,5 +36,5 @@ class Game(arcade.Window):
 
 
 if __name__ == "__main__":
-    window = Game(SCREEN_WIGHT, SCREEN_HEIHT, SCREEN_TITLE)
+    window = Game(SCREEN_WIGHT, SCREEN_HEIGHT, SCREEN_TITLE)
     arcade.run()
