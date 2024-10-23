@@ -25,7 +25,7 @@ class Shop:
         if ex(self.__file_name):  # проверка наличия файла
             pass
         else:
-            file = open(self.__file_name, 'w')
+            file = open(self.__file_name, 'w')  # если файла нет, то создаем файл
             file.close()
         file = open(self.__file_name, 'r+')
         products = file.read()
