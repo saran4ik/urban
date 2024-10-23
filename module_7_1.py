@@ -22,9 +22,7 @@ class Shop:
             return 'Файл не существует'
 
     def add(self, *prod):  # добавление нескольких товаров в файл
-        if ex(self.__file_name):  # проверка наличия файла
-            pass
-        else:
+        if not ex(self.__file_name):  # проверка наличия файла
             file = open(self.__file_name, 'w')  # если файла нет, то создаем файл
             file.close()
         file = open(self.__file_name, 'r+')  # Пробовал без проверки выше - разные варианты режимов открытия файла,
