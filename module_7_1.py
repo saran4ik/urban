@@ -27,7 +27,8 @@ class Shop:
         else:
             file = open(self.__file_name, 'w')  # если файла нет, то создаем файл
             file.close()
-        file = open(self.__file_name, 'r+')
+        file = open(self.__file_name, 'r+')  # Пробовал без проверки выше - разные варианты режимов открытия файла,
+                                            # но не работало как надо
         products = file.read()
         for p in prod:
             if p.name not in products:  # проверка наличия продукта по имени в файле
