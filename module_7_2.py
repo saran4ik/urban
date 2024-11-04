@@ -1,18 +1,14 @@
 def custom_write(file_name, strings):
     strings_positions = {}
-    with open(file_name, 'w', encoding='utf-8') as f:
+    with open(file_name, 'w+', encoding='utf-8') as f:
         f.writelines("%s\n" % string for string in strings)
-        print('Write finished')
-    with open(file_name, 'r', encoding='utf-8') as f:
-        lines_index = [0]
-        while f.readline():
-            lines_index.append(f.tell())
         f.seek(0)
-        file_strings = f.read().splitlines()
         num_string = 1
-        for i in range(len(file_strings)):
-            strings_positions[num_string, lines_index[i]] = file_strings[i]
+        start_position = 0
+        for line in iter(f.readline, ''):
+            strings_positions[num_string, start_position] = line.strip()
             num_string += 1
+            start_position = f.tell()
     return strings_positions
 
 
