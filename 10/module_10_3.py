@@ -25,7 +25,7 @@ class Bank:
                 self.balance -= withdrawal
                 print(f"Снятие: {withdrawal}. Баланс: {self.balance} \n", end='')
             else:
-                print("Запрос отклонён, недостаточно средств \n", end='')  
+                print("Запрос отклонён, недостаточно средств \n", end='')
                 self.lock.acquire()
             sleep(0.001)
 
