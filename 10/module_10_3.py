@@ -11,21 +11,21 @@ class Bank:
     def deposit(self):
         for i in range(100):
             rep = randint(50, 500)
+            self.balance += rep
             if self.balance >= 500 and self.lock.locked():
                 self.lock.release()
-            self.balance += rep
-            print(f"#{i} Пополнение: {rep}. Баланс: {self.balance}", flush=True)
+            print(f"#{i} Пополнение: {rep}. Баланс: {self.balance} \n", end='')
             sleep(0.001)
 
     def take(self):
         for i in range(100):
             withdrawal = randint(50, 500)
-            print(f"#{i} Запрос на {withdrawal}", flush=True)
+            print(f"#{i} Запрос на {withdrawal} \n", end='')
             if withdrawal <= self.balance:
                 self.balance -= withdrawal
-                print(f"Снятие: {withdrawal}. Баланс: {self.balance}", flush=True)
+                print(f"Снятие: {withdrawal}. Баланс: {self.balance} \n", end='')
             else:
-                print("Запрос отклонён, недостаточно средств", flush=True)
+                print("Запрос отклонён, недостаточно средств \n", end='')  
                 self.lock.acquire()
             sleep(0.001)
 
