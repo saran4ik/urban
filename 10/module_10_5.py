@@ -3,8 +3,8 @@ from datetime import datetime as dt
 
 def read_info(name):
     all_data = []
-    with open(name, 'r', encoding='utf8') as file1:
-        for line in file1:
+    with open(name, 'r', encoding='utf8') as file:
+        for line in file:
             all_data.append(line)
 
 files = ['file 1.txt', 'file 2.txt', 'file 3.txt', 'file 4.txt']
